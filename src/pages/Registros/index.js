@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert, Modal, Button, TextInput } from 'react-native';
 import { DatabaseConnection } from '../../database/database'
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import FontAwesome6  from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome5';
 import { Picker } from '@react-native-picker/picker';
 
 export default function App() {
@@ -142,32 +142,21 @@ export default function App() {
                             onChangeText={setFilme}
                             placeholder="Nome do Filme"
                         />
-                        <Picker
-                            selectedValue={genero}
-                            style={styles.picker}
-                            onValueChange={(itemValue, itemIndex) =>
-                                setGenero(itemValue)
-                            }>
-                            <Picker.Item label="Selecione a categoria:" value="" />
-                            <Picker.Item label="Ficção" value="Ficção" />
-                            <Picker.Item label="Romance" value="Romance" />
-                            <Picker.Item label="Aventura" value="Aventura" />
-                            <Picker.Item label="Comédia" value="Comédia" />
-                        </Picker>
-                        <Picker
-                            selectedValue={classificacao}
-                            style={styles.picker}
-                            onValueChange={(itemValue, itemIndex) =>
-                                setClas(itemValue)
-                            }>
-                            <Picker.Item label="Selecione a classificação:" value="" />
-                            <Picker.Item label="Livre para todos os públicos" value="Livre para todos os públicos" />
-                            <Picker.Item label="10 anos" value="10 anos" />
-                            <Picker.Item label="12 anos" value="12 anos" />
-                            <Picker.Item label="14 anos" value="14 anos" />
-                            <Picker.Item label="16 anos" value="16 anos" />
-                            <Picker.Item label="18 anos" value="18 anos" />
-                        </Picker>
+                        <Text>Editando classificação</Text>
+                        <TextInput
+                            style={styles.input}
+                            value={genero}
+                            onChangeText={setGenero}
+                            placeholder="Digite uma nova classificação"
+                        />
+                        <Text>Editando gênero</Text>
+                        <TextInput
+                            style={styles.input}
+                            value={classificacao}
+                            onChangeText={setClassificacao}
+                            placeholder="Digite um novo gênero"
+                        />
+
                         <View style={styles.saveButton}>
                             <Button title="Salvar" onPress={() => {
                                 salvarEdicao()
@@ -179,8 +168,6 @@ export default function App() {
                     </View>
                 </View>
             </Modal>
-
-
 
             <StatusBar style="auto" />
         </View>
