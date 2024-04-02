@@ -140,21 +140,20 @@ export default function App() {
                             style={styles.input}
                             value={filme}
                             onChangeText={setFilme}
-                            placeholder="Nome do Filme"
+
                         />
                         <Text>Editando classificação</Text>
                         <TextInput
                             style={styles.input}
                             value={genero}
                             onChangeText={setGenero}
-                            placeholder="Digite uma nova classificação"
+
                         />
                         <Text>Editando gênero</Text>
                         <TextInput
                             style={styles.input}
                             value={classificacao}
                             onChangeText={setClassificacao}
-                            placeholder="Digite um novo gênero"
                         />
 
                         <View style={styles.saveButton}>
@@ -205,7 +204,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     modalContent: {
-        backgroundColor: '#E6E6FA',
+        backgroundColor: '#EAADEA',
         borderRadius: 20,
         padding: 20,
         width: '80%',
@@ -218,24 +217,15 @@ const styles = StyleSheet.create({
     },
     input: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: 'purple',
         borderRadius: 10,
         padding: 15,
         marginBottom: 20,
         width: '100%',
-        backgroundColor: '#333',
-        color: '#fff',
+        backgroundColor: 'black',
+        color: 'white',
         fontSize: 16,
-    },
-    picker: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 10,
-        padding: 15,
-        marginBottom: 20,
-        width: '100%',
-        backgroundColor: '#333',
-        color: '#fff',
+
     },
     buttonsContainer: {
         flexDirection: 'row',
